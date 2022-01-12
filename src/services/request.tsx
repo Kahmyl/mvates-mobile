@@ -1,5 +1,5 @@
 import { api } from "./api"
-import { loginData, pollData, voteData } from './types'
+import { loginData, pollData, voteData, registerData } from './types'
 
 
 export const getPolls = () => {
@@ -8,6 +8,10 @@ export const getPolls = () => {
 
 export const authLogin = (data: loginData) => {
     return api.post('/login', data)
+}
+
+export const register = (data: registerData) => {
+    return api.post('/register', data)
 }
 
 export const logout = () => {

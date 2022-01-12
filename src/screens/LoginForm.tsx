@@ -1,20 +1,23 @@
 import React from 'react'
 import { Container, Input, StyledButton, ErrorText } from '../utils/global';
+import { useDispatch} from "react-redux";
 import { Formik } from 'formik';
 import { View } from 'react-native';
 import { loginSchema } from '../Schema'
 import FlatButton from '../shared/button';
+import { loginUser } from "../redux/actions";
 
 
 
 const LoginForm = () => {
+    const dispatch = useDispatch();
     return(
       <Container>
         <Formik
           initialValues={{email: '', password: ''}}
           validationSchema={loginSchema}
           onSubmit={(values) =>{
-            console.log(values)
+            dispatch(loginUser(values))
           }}
         >
           {({handleChange, handleSubmit, isSubmitting, values, errors, touched, handleBlur}) => (
