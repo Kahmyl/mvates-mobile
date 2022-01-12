@@ -1,11 +1,15 @@
 import React from 'react'
 import { Container, StyledText } from '../utils/global';
+import RegisterForm from './RegisterForm';
+import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 const Register = () => {
     return(
-      <Container>
-        <StyledText>Register Screen</StyledText>
-      </Container>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Container>
+          <RegisterForm/>
+        </Container>
+      </TouchableWithoutFeedback>
     )
 }
 

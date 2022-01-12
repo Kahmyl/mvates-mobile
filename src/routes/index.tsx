@@ -1,18 +1,22 @@
-import { createStackNavigator } from "react-navigation-stack";
+import { createDrawerNavigator } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
-import Home from "../screens/Home";
-import Vote from "../screens/Vote"; 
+import Register from "./RegisterStack";
+import Login from "./LoginStack";
+import Home from "./HomeStack";
 
 
-const screens = {
+const Drawer = createDrawerNavigator({
   Home: {
-    screen: Home
+    screen: Home,
   },
-  Vote: {
-    screen: Vote
-  }
-}
+  Register: {
+    screen: Register,
+  },
+  Login: {
+    screen: Login,
+  },
+})
 
-const Route = createStackNavigator(screens);
 
-export default createAppContainer(Route);
+
+export default createAppContainer(Drawer);

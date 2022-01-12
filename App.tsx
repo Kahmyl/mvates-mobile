@@ -1,8 +1,9 @@
-import Home from './src/screens/Home';
 import { useEffect, useState, useCallback } from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import Navigator from './src/routes'
+import { store } from './src/redux';
+import { Provider } from 'react-redux'
 
 
 export default function App() {
@@ -24,7 +25,10 @@ export default function App() {
     return <AppLoading />;
   }else{
     return (
-      <Navigator/>
+      <Provider store={store}>
+        <Navigator/>
+      </Provider>
+      
     );
   }
 }

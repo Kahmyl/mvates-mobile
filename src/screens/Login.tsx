@@ -1,11 +1,15 @@
 import React from 'react'
-import { Container, StyledText } from '../utils/global';
+import { Container } from '../utils/global';
+import LoginForm from './LoginForm';
+import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 const Login = () => {
     return(
-      <Container>
-        <StyledText>Login Screen</StyledText>
-      </Container>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <Container>
+          <LoginForm/>
+        </Container>
+      </TouchableWithoutFeedback>
     )
 }
 
